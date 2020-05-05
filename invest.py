@@ -4,26 +4,28 @@ if not sys.warnoptions:
     import warnings
     warnings.simplefilter("ignore")
 
+
 import numpy as n
 from scipy.optimize import minimize
 
 # How much am I investing?
-newmoney = 
+newmoney = 0
 
 # What are my current MF balances
 ## ORDERED HOW VANGUARD LISTS THEM
-VEXAX = 
-VFWAX = 
-VFSAX = 
-VWIUX = 
-VSMAX = 
-VTIAX = 
-VTSAX = 
+VEXAX = 41631.76 #35931.83
+VFWAX = 60216.65 #51317.32
+VFSAX = 28563.49 #29335.94
+VWIUX = 52273.12 #51999.64
+VLCAX = 87155.73
+VSMAX = 0 #6540.38
+VTIAX = 0 #10285.54
+VTSAX = 0 #89634.92
 
 # ORDER for algorithm
 # VTSAX, VSMAX, VTIAX, VFSAX, VWIUX
 curbal = n.array([
-    VTSAX,
+    VTSAX+VLCAX,
     VSMAX+VEXAX,
     VTIAX+VFWAX,
     VFSAX,
