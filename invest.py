@@ -4,7 +4,6 @@ if not sys.warnoptions:
     import warnings
     warnings.simplefilter("ignore")
 
-
 import numpy as n
 from scipy.optimize import minimize
 
@@ -48,10 +47,8 @@ curchange = n.array(
 curchange*=.01
 curchange+=1
 
-
 # Adjust curbals
 curbal *= curchange
-
 
 # Desired AA
 des_alloc = n.array([.33, .17, .23, .12, .15])
@@ -87,11 +84,10 @@ res = minimize(fun=best,
                method='SLSQP',
                options={'maxiter':100, 'disp':False})
 
-
 x = res.x
 y = x*newmoney + curbal
 
-funds = 'VTSAX, VSMAX/VEXAX, VTIAX/VFWAX, VFSAX, VWIUX'.split(', ')
+funds = 'VTSAX/VLCAX, VSMAX/VEXAX, VTIAX/VFWAX, VFSAX, VWIUX'.split(', ')
 
 colnames = 'Fund,Current Aloc,New Alloc,Amt to Buy.'.split(',')
 row_format ="{:>15}"
